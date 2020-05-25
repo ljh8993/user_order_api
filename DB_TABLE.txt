@@ -1,0 +1,34 @@
+## 회원 속성 테이블 생성
+CREATE TABLE user_tb (
+    `id` VARCHAR(100) NOT NULL, -- 회원 아이디
+    `pwd` VARCHAR(128) NOT NULL, -- 비밀번호
+    `name` VARCHAR(20) NOT NULL, -- 회원 이름
+    `nickname` VARCHAR(30) NOT NULL, -- 별명
+    `telnum` VARCHAR(20) NOT NULL, -- 전화번호
+    `email` VARCHAR(100) NOT NULL, -- 이메일
+    `gender` TINYINT, -- 성별 (0 - 남, 1 - 여)
+    `signup_date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, -- 가입날짜
+    PRIMARY KEY(`id`)
+);
+
+## 주문 속성 테이블 생성
+CREATE TABLE order_attribute_tb (
+    `order_num` VARCHAR(12) NOT NULL COMMENT "주문번호",
+    `order_id` VARCHAR(100) NOT NULL COMMENT "주문자ID",
+    `item_name` VARCHAR(100) NOT NULL COMMENT "items_tb의 name",
+    `item_idx` INT NOT NULL COMMENT "items_tb의 idx",
+    `payment_date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT "결제날짜",
+    PRIMARY KEY(`order_num`)
+);
+
+## emoji저장을 위한 character set 4바이트로 변경
+DataBase connect charset="utf8mb4"
+ALTER TABLE order_attribute_tb CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+## order_attribute_tb의 데이터 생성을 위한 제품 DB 생성
+CREATE TABLE items_tb (
+	`idx` INT AUTO_INCREMENT,
+    `name` VARCHAR(100) NOT NULL COMMENT "제품명",
+    `update_date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT "업데이트날짜",
+    PRIMARY KEY(`idx`)
+);

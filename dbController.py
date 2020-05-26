@@ -1,5 +1,3 @@
-from secretKey import DATABASE
-
 class DB(object):
     def __init__(self, product='mysql'):
         self.product = product
@@ -12,6 +10,7 @@ class DB(object):
 
     def _setup_mysql(self):
         import pymysql
+        from secretKey import DATABASE
         self.conn = pymysql.connect(host=DATABASE["host"],
                                     user=DATABASE["user"],
                                     passwd=DATABASE["passwd"],

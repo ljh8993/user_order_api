@@ -1,6 +1,4 @@
-from flask import jsonify, request
-
-import dbController
+from apprun import jsonify, request, dbController
 
 
 # 단일 회원의 주문 목록 조회 API

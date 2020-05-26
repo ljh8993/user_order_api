@@ -1,8 +1,7 @@
-from flask import jsonify, session, request
+from apprun import jsonify, session, request, dbController
+
 from datetime import datetime as dt
 from hashlib import sha256
-
-import dbController
 
 
 # 제품 구매 시 order_attribute_tb(주문속성테이블)에 데이터 등록을 위한 API

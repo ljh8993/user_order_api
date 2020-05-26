@@ -1,6 +1,5 @@
-from flask import jsonify
+from apprun import jsonify, dbController
 
-import dbController
 
 # 주문번호 등록 테스트를 위한 제품리스트 리턴
 @app.route("/itemList", methods=["POST"])

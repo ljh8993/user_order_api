@@ -1,8 +1,6 @@
+from apprun import dbController, jsonify, request
 from hashlib import sha512
-from flask import jsonify, request
-
 import service
-import dbController
 
 
 # 회원가입 API

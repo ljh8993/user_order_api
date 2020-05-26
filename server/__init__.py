@@ -5,7 +5,5 @@ from .userinfo import *
 from .itemList import *
 from .orderedList import *
 from .orderItem import *
-from userSInfo import *
-
-from .dbController import *
+from .userSInfo import *
 from .service import *

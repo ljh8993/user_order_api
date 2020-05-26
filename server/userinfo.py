@@ -1,7 +1,4 @@
-from flask import jsonify, request
-
-import dbController
-
+from apprun import dbController, request, jsonify
 
 # 단일 회원 상세 정보 조회 API
 @app.route("/userInfo", methods=["POST"])

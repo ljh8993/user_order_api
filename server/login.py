@@ -1,7 +1,5 @@
-from flask import jsonify, session, request
+from apprun import jsonify, session, request, dbController
 from hashlib import sha512
-
-import dbController
 
 
 # 로그아웃 API
